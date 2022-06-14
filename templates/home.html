@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <link rel="stylesheet" type="text/css" href="static/CSS/project.css">
+    <script src="static/js/new.js"></script>
+
+
+    
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <div class="first_part">
+            <h1>Welcome In Data</h1>
+        </div>
+
+
+
+        <div class="second_part">
+
+            <div class="sub part1">
+                <a href="register.html"><h2>Register</h2></a>
+            </div>
+            <div class="sub part2">
+                <a href="{{url_for('msg')}}"><h2>Login</h2></a>  
+            </div>
+            
+        </div>
+
+        <input type="button" onclick="sayHello()" value="Please Click Here"/>
+
+    </div>
+</body>
+</html>
