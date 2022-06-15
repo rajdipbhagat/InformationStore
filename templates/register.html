@@ -7,30 +7,22 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="reg_main">
-        <div class="regi_first_part">
-            <h1>Register Page</h1>
-        </div>
-        <div class="regi_second_part">
-            <input type="text" placeholder="First Name">
-            <input type="text" placeholder="Last Name">
-            <input type="email" placeholder="email">
-            <input type="password" placeholder="Password">
-            <input type="radio" name="s">Male
-            <input type="radio" name="s">FeMale
-            <select name="" id="">
-                <option value="Pune">PUNE</option>
-                <option value="Mumbai">Mumbai</option>
-                <option value="Solapur">Solapur</option>
-                <option value="Kolhapur">Kolhapur</option>
-                <option value="Aurangabad">Aurangabad</option>
-            </select>
-            <div id="btn">
-                <button>Submit</button>
+    <form action="http://127.0.0.1:5000/success" method="post">
+        <div class="reg_main">
+            <div class="regi_first_part">
+                <h1>Register Page</h1>
             </div>
-
+            <div class="regi_second_part">
+                <input type="text" name="name" placeholder="Full Name"><br><br>
+                <input type="email" name="email" placeholder="email"><br><br>
+                <input type="text" name="contact" placeholder="Contact Number"><br><br>
+                <input type="text" name="city" placeholder="Enter City"><br><br>
+                
+                
+                <input type="submit" value="Submit">
+            </div>
+    
         </div>
-
-    </div>
+    </form>
 </body>
 </html>
