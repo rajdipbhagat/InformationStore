@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request
+from distutils.log import error
+from flask import Flask, render_template, request,redirect
 
 app = Flask(__name__)
 
@@ -8,6 +9,10 @@ em_list=[]
 @app.route("/")
 def index():
     return render_template("home.html")
+
+@app.route("/")
+def sss():
+    return render_template ("login.html")
 
 
 # Login and visit welcome message class define
@@ -24,8 +29,8 @@ def login():
     if uname =="dipakbhagat" and password=="dipak123":
         return "welcome %s" % uname
     else:
-        return "Try again"
-
+        error = "Invalid UserName Or Password !"
+        return render_template('login.html', error=error)
 
 
 

@@ -8,6 +8,9 @@
 </head>
 <body>
     <form action="http://127.0.0.1:5000/formlogin" method="get">
+        {% if error %}
+            <p><strong>{{error}}</strong></p>
+        {% endif %}
         <table>
             <tr>
                 <td>Username</td>

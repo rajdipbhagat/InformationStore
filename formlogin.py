@@ -1,7 +1,10 @@
-from flask import Flask, request
+from flask import Flask, render_template, request, url_for,redirect
 
 app= Flask(__name__)
 
+@app.route("/")
+def sss():
+    return render_template ("login.html")
 
 @app.route("/formlogin", methods=['GET'])
 def login():
@@ -11,10 +14,9 @@ def login():
     if uname =="dipakbhagat" and password=="dipak123":
         return "welcome %s" % uname
     else:
-        return "Try again"
-
-
+        return redirect(url_for("sss"))
 """
+
 @app.route("/formlogin", methods=['POST'])
 def login():
     uname = request.form["uname"]
@@ -24,6 +26,7 @@ def login():
         return "welcome %s" % uname
     else:
         return "Try again"
+
 """
 
 
