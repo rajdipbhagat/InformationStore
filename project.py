@@ -1,10 +1,21 @@
-from distutils.log import error
 from flask import Flask, render_template, request,redirect
+from flask_mysqldb import MySQL 
 
 app = Flask(__name__)
-
-
 em_list=[]
+
+
+
+#Database Configuration
+app.config['MYSQL_HOST']="localhost"
+app.config['MYSQL_USER']="root"
+app.config['MYSQL_PASSWORD']=""
+app.config['MYSQL_DB']="datastore"
+
+mydb=MySQL(app)
+
+
+
 
 @app.route("/")
 def index():
@@ -43,6 +54,20 @@ def register_page_link():
 def show():
     info = request.form
     return render_template("result.html", result=info)
+
+@app.route("/insert" , methods=['POST'])
+def insert():
+    name = request.form["name"]
+    contact = request.form["contact"]
+    city = request.form["city"]
+    email = request.form["email"]
+    password = request.form["password"]
+
+    x = mydb.connection.cursor()
+    x.execute("insert into infostore(name,contact,city,email,security_code) VALUES(%s,%s,%s,%s,%s)",(name,contact,city,email,password))
+    mydb.connection.commit()
+    x.close()
+    return "Data Insert Successfull"
 
     
 
